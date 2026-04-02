@@ -1,6 +1,7 @@
 // components/landing/Navbar.tsx
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = ["Home", "Services", "About us", "FAQ"];
@@ -27,8 +28,8 @@ export default function Navbar() {
     <>
       <nav
         className={[
-          "sticky top-0 left-0 right-0 z-100 h-15",
           "flex items-center justify-between",
+          "sticky top-0 left-0 right-0 z-100 h-15",
           "px-4 sm:px-6 lg:px-10",
           "transition-all duration-300",
           scrolled
@@ -45,12 +46,12 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8 list-none">
           {NAV_LINKS.map((item) => (
             <li key={item}>
-              <a
+              <Link
                 href="#"
-                className="text-sm text-[#444] no-underline font-normal transition-colors duration-200 hover:text-[#0f1117]"
+                className="text-normal font-medium text-[#444] no-underline transition-colors duration-200 hover:text-[#0f1117]"
               >
                 {item}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

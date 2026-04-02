@@ -72,7 +72,7 @@ export default function CardsGrid() {
         {CARDS.map((card, i) => (
           <div
             key={card.id}
-            className="group bg-white rounded-2xl p-7 border border-black/[0.06] flex flex-col gap-4 cursor-default
+            className="group bg-white rounded-[20px] p-7 border border-black/[0.06] flex flex-col gap-4 cursor-default
               shadow-[0_2px_12px_rgba(0,0,0,0.06)]
               hover:shadow-[0_8px_30px_rgba(0,0,0,0.13)]
               hover:-translate-y-1

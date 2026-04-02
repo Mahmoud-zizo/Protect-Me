@@ -1,6 +1,6 @@
 // components/landing/Hero.tsx
 "use client";
-
+import Link from "next/link";
 import { useInView } from "@/lib/hooks/Useinview";
 import CardsGrid from "./CardsGrid";
 
@@ -23,32 +23,52 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-[820px] mx-auto px-[clamp(16px,5vw,32px)]">
-        <h1
-          className={`fade-up font-bold leading-[1.12] tracking-[-0.03em] text-[#0f1117] text-[clamp(1.85rem,5.5vw,3.8rem)] ${inView ? "visible" : ""}`}
+      <div className="relative max-w-4xl mx-auto px-[clamp(16px,5vw,32px)]">
+        {/* Badge */}
+        <div
+          className={`fade-up inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-black/[0.08] rounded-full px-4 py-1.5 mb-6 ${inView ? "visible" : ""}`}
         >
-          AI-Driven Support To Boost
-          <br />
-          Your Business Growth
+          <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+          <span className="text-xs font-semibold text-[#555] tracking-wide uppercase">
+            Egypt&apos;s #1 Vehicle Protection
+          </span>
+        </div>
+
+        {/* Headline */}
+        <h1
+          className={`fade-up tracking-[-0.03em] leading-[1.08] ${inView ? "visible" : ""}`}
+          style={{ transitionDelay: "0.05s" }}
+        >
+          {/* Line 2 — hero word */}
+          <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-b from-[#0f1117] to-[#40444f] bg-clip-text text-transparent">
+            Protect Me
+          </span>
+
+          {/* Line 3 — accent line */}
+          <span className="block text-3xl sm:text-4xl md:text-5xl font-extrabold mt-2">
+            <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+              Premium
+            </span>
+            <span className="text-[#0f1117]">
+              {" "}
+              Vehicle Protection, Redefined.
+            </span>
+          </span>
         </h1>
 
         <p
-          className={`fade-up text-[#666] leading-[1.75] max-w-[500px] mx-auto mt-5 mb-9 text-[clamp(13px,2vw,15px)] ${inView ? "visible" : ""}`}
-          style={{ transitionDelay: "0.1s" }}
+          className={`fade-up text-[#666] leading-relaxed max-w-lg mx-auto mt-6 mb-9 text-base font-medium ${inView ? "visible" : ""}`}
+          style={{ transitionDelay: "0.15s" }}
         >
-          A platform that helps customer service leaders provide efficient,
-          high-quality support at scale with an AI agent, improving speed and
-          quality across all channels, 24/7.
+          Egypt&apos;s most trusted platform for vehicle protection — combining
+          cutting-edge AI with 24/7 expert support to keep you covered, always.
         </p>
 
         <div
-          className={`fade-up ${inView ? "visible" : ""}`}
-          style={{ transitionDelay: "0.2s" }}
+          className={`fade-up flex items-center justify-center gap-3 ${inView ? "visible" : ""}`}
+          style={{ transitionDelay: "0.25s" }}
         >
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 bg-[#0f1117] text-white text-[15px] font-medium px-7 py-[14px] rounded-full no-underline shadow-[0_4px_20px_rgba(0,0,0,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.22)]"
-          >
+          <Link href="" className="btn">
             Book a Demo
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
@@ -59,10 +79,20 @@ export default function Hero() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
+
+          <Link href="" className="btn bg-white text-black">
+            Learn More
+          </Link>
         </div>
       </div>
+
       <CardsGrid />
+
+      <style>{`
+        .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+      `}</style>
     </section>
   );
 }

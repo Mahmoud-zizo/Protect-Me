@@ -177,6 +177,9 @@
   h3 {
     @apply font-schibsted-grotesk text-2xl font-bold;
   }
+  h2 {
+    @apply text-4xl font-bold;
+  }
 
   ul {
     @apply list-disc list-inside;
@@ -188,6 +191,12 @@
     .subheading {
       @apply text-light-100 text-lg max-sm:text-sm text-center mt-5;
     }
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 bg-[#0f1117] text-white text-sm font-semibold
+    px-7 py-3.5 rounded-full no-underline shadow-[0_4px_20px_rgba(0,0,0,0.18)]
+    transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.22)];
   }
 
   #explore-btn {
@@ -245,10 +254,6 @@
   #event {
     .header {
       @apply flex w-2/3 flex-col items-start gap-4 max-lg:w-full mb-10;
-    }
-
-    h2 {
-      @apply text-2xl font-bold;
     }
 
     p {
