@@ -64,12 +64,13 @@ export default function CardsGrid() {
   }, []);
 
   return (
-    <section className="max-w-5xl mx-auto px-6 pb-24 pt-10">
-      <div
-        ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-      >
-        {CARDS.map((card, i) => (
+    <section className="w-full bg-gradient-to-b from-[#fcfbf9] to-[#f0ede8]">
+      <div className="max-w-5xl mx-auto px-6 pb-24 pt-10">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          {CARDS.map((card, i) => (
           <div
             key={card.id}
             className="group bg-white rounded-[20px] p-7 border border-black/[0.06] flex flex-col gap-4 cursor-default
@@ -96,6 +97,7 @@ export default function CardsGrid() {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

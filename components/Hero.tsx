@@ -10,18 +10,18 @@ export default function Hero() {
     <>
       <section
         ref={ref as React.RefObject<HTMLElement>}
-        className="relative overflow-hidden bg-[#f0ede8]"
+        className="relative overflow-hidden bg-gradient-to-br from-[#fcfbf9] via-[#f0ede8] to-[#e2ded5]"
       >
         <div
-          className="max-w-7xl mx-auto px-2 sm:px-10 py-16 sm:py-30
-  flex flex-col lg:flex-row items-center gap-10 lg:gap-32"
+          className="max-w-7xl sm:mt-16 mx-auto px-2 sm:px-10 py-16 sm:py-30
+          flex flex-col lg:flex-row items-center gap-10 lg:gap-32"
         >
           {/* ── LEFT: text ── */}
           <div
             className=" flex-1 flex flex-col 
             items-center justify-center text-center 
             lg:items-start lg:justify-start lg:text-left
-            order-1 w-full"
+            order-1 w-full "
           >
             <h1
               className={`fade-up font-bold leading-[1.08] tracking-[-0.03em] text-[#0f1117]
@@ -35,7 +35,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className={`fade-up text-[#666] leading-relaxed mt-5 mb-8 text-[15px] max-w-sm ${inView ? "visible" : ""}`}
+              className={`fade-up text-[#666] leading-relaxed font-bold mt-5 mb-8 text-[15px] max-w-sm ${inView ? "visible" : ""}`}
               style={{ transitionDelay: "0.1s" }}
             >
               Connect vehicle owners with premium protection plans through
@@ -48,7 +48,7 @@ export default function Hero() {
             >
               <Link
                 href=""
-                className="inline-flex items-center bg-[#0f1117] text-white text-sm font-semibold
+                className="inline-flex items-center bg-red-500 text-white text-sm font-semibold
                   px-6 py-3 rounded-full no-underline
                   shadow-[0_2px_12px_rgba(0,0,0,0.2)]
                   transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)]"
@@ -141,7 +141,7 @@ export default function Hero() {
               </div>
               {/* Floating pill — above card 2 */}
               <div
-                className="absolute bg-white rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.12)]
+                className="absolute bg-white rounded-[10px] shadow-[0_4px_16px_rgba(0,0,0,0.12)]
                   border border-black/[0.06] z-20 whitespace-nowrap px-2.5 py-1.5"
                 style={{ top: "1%", right: "38%" }}
               >
@@ -165,12 +165,10 @@ export default function Hero() {
                   style={{ aspectRatio: "1 / 1.25" }}
                 />
               </div>
-              {/* Floating pill — beside card 3 */}
-
-              {/* ── Star badge ── */}
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-b from-transparent to-[#fcfbf9]" />
       </section>
     </>
   );

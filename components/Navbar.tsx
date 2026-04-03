@@ -1,6 +1,6 @@
 // components/landing/Navbar.tsx
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -38,9 +38,16 @@ export default function Navbar() {
         ].join(" ")}
       >
         {/* Logo */}
-        <span className="font-bold text-[17px] tracking-[-0.02em] text-[#0f1117]">
-          Samfund
-        </span>
+        <Link href="/" className="flex flex-row items-center gap-2">
+          <Image
+            src="/images/logo2.jpg"
+            alt="logo"
+            width={40}
+            height={40}
+            className="rounded-[15px] object-cover"
+          />
+          <p className="text-xl font-bold  ">Pro Sign</p>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8 list-none">
@@ -57,9 +64,7 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <button className="hidden md:block bg-[#0f1117] text-white border-none rounded-full px-5.5 py-2.25 text-sm font-medium cursor-pointer transition-opacity duration-200 hover:opacity-80">
-          Log in
-        </button>
+        <button className="hidden md:block btn">Log in</button>
 
         {/* Hamburger */}
         <button
@@ -101,9 +106,7 @@ export default function Navbar() {
               {item}
             </a>
           ))}
-          <button className="self-start bg-[#0f1117] text-white border-none rounded-full px-6 py-2.75 text-sm font-medium cursor-pointer">
-            Log in
-          </button>
+          <button className="btn">Log in</button>
         </div>
       )}
     </>

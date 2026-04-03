@@ -167,7 +167,7 @@
   }
 
   main {
-    @apply relative mx-auto bg-white flex flex-col overflow-hidden sm:px-10 px-5;
+    @apply relative w-full flex flex-col overflow-hidden;
   }
 
   h1 {
@@ -194,9 +194,9 @@
   }
 
   .btn {
-    @apply inline-flex items-center gap-2 bg-[#0f1117] text-white text-sm font-semibold
-    px-7 py-3.5 rounded-full no-underline shadow-[0_4px_20px_rgba(0,0,0,0.18)]
-    transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.22)];
+    @apply text-center gap-2 bg-red-500 text-white text-sm font-semibold
+    px-7 py-2 rounded-full cursor-pointer
+    transition-all duration-200 hover:-translate-y-0.5;
   }
 
   #explore-btn {
